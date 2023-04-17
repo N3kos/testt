@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<head>
+<style>
+*{   /*Γενικοί κανόνες για reset default τιμών*/
+    margin: 0px;/* όλες οι τιμές θα γίνουν 0 στο εκτός */
+    padding: 0px;/* όλες οι τιμές θα γίνουν 0 στο εντος */
+    box-sizing: border-box;/* αν έχουμε 100px και βάλουμε 2px border τότε θα γίνει 102, όταν βάζουμε αυτή την εντολή θα γίνει 98+2=100px  */
+    text-decoration: none;/* αφαιρούμε το decor απο τα κείμενα π.χ. απο Links την υπογράμμιση */
+    border: 0px;/* οι πίνακες γίνονται 0, δηλ δεν υπάρχουν */
+} 
+
+
+header{
+width: 100%;/* το content μας θα είναι στο 100% του εύρους που ορίζουμε */
+max-width: 1920px;/* το μέγιστο πλάτος του header */
+background-color: lightcyan;
+height: 100px;/* το ύψος του header*/
+
+}
+header nav{
+    padding: 60px 0px 0px 0px;/* πάνω, δεξιά, κάτω και αριστερά, το έβαλα για να κατέβει το μενού */  
+}
+div.header{
+width: 100%;/* το 100% του εύρους που βάλαμε */
+max-width: 1200px;/* για να πιάσει το περιεχόμενο έχω βάλει 1200 μέγιστο πλάτος, ενω το 1920 είναι για το background χρώμα */
+margin: auto;/* για να κεντράρει τα στοιχεία */
+display: flex;/* αλλάζω τη στοίχιση */
+justify-content: space-between;/* τα πάω στα 2 άκρα, λογότυπο και μενού */
+}
+
+header img{  /* το μέγεθος του logo */
+    width: 100px;
+    height: 80px;
+}
+
+
+.wrapper{ /* δηλώνω τις τιμές που θέλω για το main body */
+    height: 1500px;/* το ύψος του wrapper */
+    width:100%;/* θα καλύπτει το 100%, αν το έβαζα 50% θα έπιανε απο το μισό */
+    max-width: 1200px;/* το μέγιστο πλάτος του wrapper στο body */
+    margin:auto;/* κάνει στοίχιση στο κέντρο */
+    background-color:bisque;
+}
+
+.wrapper img{
+    width: 300px;/* πλάτος των εικόνων στο wrapper */
+    height: 150px;/* ύψος των εικόνων στο wrapper */    
+}
+
+div.flexing{
+position: relative;/* πρέπει να έχει ο γονικός το relative για να πάρουν τις absolute τιμές τα παιδιά, ώστε να ξεκινάει να μετράει απο τον γονέα αλλιώς θα ξεκινούσε απο το Body */
+}
+
+.flexing2 img{
+    width: 450px;/* το πλάτος της μεγάλης εικόνας με κλόουν */
+    height: 200px;/* ύψος της μεγάλης εικόνας με κλόουν */
+    /* width:fit-content;    */
+   margin: 100px 0px 0px 350px;/* βάζουμε margin για να τη κεντράρουμε*/
+   
+}
+
+div.flexing3 {
+    position: absolute;/* για να την τοποθετήσω στη μέση και να πάρει τις παρακάτω τιμές η διαφορά με τη relative είναι πως η absolute χαλάει τη σειρά και βγαίνει εκτός*/
+    top: 200px;/* ύψος της εικόνας, χρειάζεται το absolute */
+    left: 150px;/* αριστερά της εικόνας το κενό, χρειάζεται το absolute */
+    text-align: justify;/* κεντράρει το κείμενο ανάλογα με το width (300) αριστερά-δεξιά */
+    width:300px/* το πλάτος του περιεχόμενου, εικόνα και paragraph */
+}
+
+section.meliodas{
+    display: flex;/* αλλάζουμε τη στοίχιση */
+    flex-direction: row;/* οριζόντια στοίχιση */
+    align-items: center;/* κεντράρει το περιεχόμενο (πάνω κάτω), πρέπει να δηλώσουμε και heigth διότι έχουμε βάλει παραπάνω position */
+    justify-content: center;/* κεντράρει το περιεχόμενο (δεξιά αριστερά) */
+    gap:1%;/* κενό 1% απο αυτό που δηλώσαμε (1200Px) ανάμεσα στα items */
+    height: 800px;/* το ύψος του συγκεκριμένου section για να πάει κέντρο */
+    text-align: center;/* κεντράρουμε το κείμενο κάτω απο τις εικόνες */
+    margin-bottom: -250px;
+}
+section.meliodas img{
+    width: 200px;/* πλάτος των εικόνων που βρίσκονται στο section της συγκεκριμένης κλάσης */
+    height: 120px;/* ύψος των εικόνων που βρίσκονται στο section της συγκεκριμένης κλάσης */
+    opacity: 0.6; /*Θα φαίνεται το 60% του χρώματος της φωτογραφίας*/
+}
+section.meliodas img:hover{ /*Όταν κάνουμε hover δηλ. περνάμε το ποντίκι απο πάνω θα κάνει τα εξής*/
+    opacity: 1; /*Θα φαίνεται 100% η φωτό σαν χρώμα*/
+    transition-duration: 800ms;/*Θα κάνει 0.8 δευτερόλεπτα να γίνει η αλλαγή*/
+}
+.meliodas p{
+    max-width: 200px;/* βάζουμε όριο στο κείμενο στο πλάτος */
+    height: 300px;/* ύψος κειμένου για να μη χαλάσει τη 4 εικόνα σα σειρά */
+}
+
+#makima{
+width: 100%;
+max-width: 1200px;
+height: 600px;
+background-repeat: no-repeat;/* να μην επαναλαμβάνετε η εικόνα */
+background-image: url(./images/wp2555882.jpg);/* η εικόνα που βάζουμε για background */
+background-size: cover;/* να πιάσει φουλ η εικόνα το background */
+opacity: 0.8;/* 80% χρώματος */
+padding-top: 150px;/* για να πάει πιο κεντρικά η φόρμα μιας και είναι μέσα στο section  */
+}
+#makima:hover{/* hover με το mouse */
+    opacity: 1;/* γεμίζουμε με όλο το χρώμα στο hover */
+}
+
+#escanor{
+    width: 350px;
+    margin:auto;
+    background-color: rgba(255, 255, 255, 0.2);/* 20% χρώμα */
+    height: 300px;
+    padding: 15px;
+}
+#escanor:hover{
+    background-color: rgba(255, 255, 255, 0.4);/* 40% χρώμα στο hover */
+    }
+#escanor input{
+    display: block;/* Εμφανίζει το element σε νέα γραμμή και πέρνει όλο το width */
+    width: 80%;
+    text-align: center;
+    color: snow;/* το χρώμα του input και του κουμπιού */
+    background-color:chocolate;/* το γέμισμα του input */
+    padding:5px;/* για ανάσα */
+    border: 1px solid snow;/* πίνακας γύρω γύρω */
+    margin-bottom: 5px;/* για ανάσα */  
+}
+#escanor label{
+    display: block;/* Για τα labels */
+    text-align: center;/* να πάει κεντρικά το κείμενο */
+    width: 60%;/* να πάρει το 60% της συνολικής τιμής */
+    padding-left: 40px;/* να το πάω μέσα 40px */ 
+}
+#escanor{/* Για να κεντράρω το περιεχόμενο */
+   padding-left: 60px;
+}
+
+
+footer{ /* Χρώμα και τιμές θέσης για το footer */
+    background-color: antiquewhite;
+    height: 120px;
+    width: 100%;
+    max-width: 1920px;
+}
+footer table{  /* Θέση πίνακα που ανήκει στο footer */
+    margin:auto;
+    width: 100%;
+    max-width: 1200px;
+    padding-top: 20px;
+}
+
+
+
+@media screen and (max-width: 900px) {/* στα 900px πλάτος της συσκευής κάνει τα παρακάτω */
+	section.meliodas{
+    flex-wrap: wrap;/* αναδιπλώνει τα στοιχεία σε αυτό το section της κλάσσης */
+    height: auto;/* το ύψος πάει ανάλογα το περιεχόμενο */
+    margin-top: 350px;/* για να μη πέφτει πάνω στην εικόνα */
+    margin-bottom: 50px;/* για να διώξουμε λίγο τη φόρμα παρακάτω */
+}
+.meliodas p{
+    height: auto;
+}
+.flexing2 img{
+    display:none;/* εξαφανίζουμε τη μεγάλη εικόνα */
+}
+.flexing{
+    position: static;
+}
+.flexing3{
+    text-align:start; 
+    margin-top: -100px;
+}
+}
+@media screen and (max-width: 420px) {
+footer{
+    margin-top:300px;/* το footer γίνεται 300px για να φανεί */
+}
+/*  */
+}
+</style>   
+</head>
+<body>
+ <header>
+    <div class="header">
+ <a href="#"><img src="./images/IMG_20220607_183457.jpg" >   </a>
+<nav>
+    <a href="#">Αρχική </a> |
+    <a href="#escanor"> Επικοινωνία </a>
+</nav>
+</div>
+ </header>
+    <!--  -->
+
+<main>
+<section class="wrapper">
+    <div class="flexing">
+  
+        
+        <div class="flexing2"><img src="./images/2021-07-11 16_41_18-(14) Dark Powerful Battle Music_ _DARKNESS BELOW_ by Red Moth & Beyond Awakening.png" >
+            
+        </div>
+        <div class="flexing3"><img src="./images/2021-07-11 16_41_18-(14) Dark Powerful Battle Music_ _DARKNESS BELOW_ by Red Moth & Beyond Awakening.png" >
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, porro? Nikos Antonopoulos</p>
+        </div>
+    <div>
+        <br>
+        <section class="meliodas">
+            <div><img src="./images/1.jpg" ><p>Lorem ipsum dolor sit amet.</p></div>
+            <div><img src="./images/jujutsu_kaisen_wallpaper_by_vale0912_de9ciq8-pre.jpg" ><p>Lorem ipsum dolor sit amet.</p></div>
+            <div><img src="./images/wp11529011.jpg" ><p>Lorem ipsum dolor sit amet.</p></div>
+            <div><img src="./images/dfk3e1i-d357b2ad-8750-4480-868d-4bec0fe86926.jpg" ><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus error repellendus omnis labore quod cupiditate, tempora harum non corporis reprehenderit?</p></div>
+        </section>    
+    <section id="makima">
+        <div id="escanor">
+            <form>
+                <label>email: </label>
+                <br>
+                <input type="email" id="email" name="email">
+                <br>
+                <label>Password:</label>
+                <br>
+                <input type="password" >
+                <br>
+                <input type="submit" value="Login">
+            </form> 
+        </div>  
+    </section>
+
+
+</section>
+</main>
+<!--  -->
+<footer>
+
+    <table>
+    <th><h3>Επικοινωνία</h3></th>
+        <tr>
+            <td width="10%">Τηλέφωνο: </td>
+            <td><a href="tel:2102102100">2102102100</a> </td>
+        </tr>
+        <tr>
+            <td>Οδός: </td>
+            <td><a href="https://goo.gl/maps/DgPakijkhaLYZpvp6" target="_blank">Δρυόπιδος 20, Γαλάτσι, 11147</a></td>
+        </tr>
+        <tr>
+            <td>Copyright &#169;</td>
+            <td></td>
+        </tr>
+
+</table>
+
+</footer>
+</body>
+</html>
